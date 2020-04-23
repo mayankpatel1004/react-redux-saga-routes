@@ -1,6 +1,5 @@
 import { all, takeLatest } from "redux-saga/effects";
-import { REQUEST_HOME_API_DATA } from "../actions/requestHomeApiData";
-//import { REQUEST_HOME_API_DATA } from 'constants/ActionTypes';
+import { REQUEST_HOME_API_DATA } from '../constants/actionTypes';
 
 import fetchHome from '../sagas/fetchHome';
 

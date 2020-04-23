@@ -1,4 +1,4 @@
-import { RECEIVE_HOME_API_DATA } from "../actions/requestHomeApiData";
+import { RECEIVE_HOME_API_DATA } from '../constants/actionTypes';
 
 export default (state = {}, { type, data }) => {
   switch (type) {
