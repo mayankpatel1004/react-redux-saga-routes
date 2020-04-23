@@ -1,11 +1,11 @@
 const blogsReducer = (state = {}, action) => {
     switch (action.type){
-        case 'GET_BLOGS':
+        case 'REQUEST_BLOGS_DATA':
             return {
                 ...state,
                 loading:true
             }
-        case 'BLOGS_RECEIVED':
+        case 'RECEIVE_BLOGS_DATA':
             return {
                 ...state,
                 blogs: action.json,

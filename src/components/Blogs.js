@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getBlogs} from '../actions/blogsActions';
+import {requestBlogsData} from '../actions/blogsActions';
 import BlogList from '../components/BlogList';
 class Blogs extends React.Component {
     constructor(props){
@@ -13,10 +13,9 @@ class Blogs extends React.Component {
         this.setState({
             loader: true
         });
-        this.props.getBlogs();
+        this.props.requestBlogsData();
     }
     render() {
-        console.log(this.state.loader);
         return(     
             <div>
                 <br /><button onClick={this.handleClick}>Get List</button><br /><br />
@@ -25,13 +24,13 @@ class Blogs extends React.Component {
                        return(
                            <BlogList data={item} key={index} />
                        )
-                    }) : 'Click Button and Please wait till data received...'
+                    }) : 'Please Wait ...'
                 }
             </div>
         )
     }
 }
 
-const mapDispatchToProps = {getBlogs: getBlogs}
+const mapDispatchToProps = {requestBlogsData: requestBlogsData}
 const mapStateToProps = state => ({ data: state.blogsReducer.blogs });
 export default Blogs = connect(mapStateToProps,mapDispatchToProps)(Blogs);

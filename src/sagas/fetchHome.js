@@ -1,5 +1,5 @@
 import { call, put } from "redux-saga/effects";
-import { receiveHomeApiData } from "../actions/requestHomeApiData";
+import { receiveHomeApiData } from "../actions/homeActions";
 import { fetchHomeData } from '../api/fetchHomeData';
 
 function* getApiData(action) {
