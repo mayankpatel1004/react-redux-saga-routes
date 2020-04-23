@@ -1,3 +1,1 @@
-export const getBlogs = () => ({
-    type : 'GET_BLOGS'
-})
+export const getBlogs = () => ({type : 'GET_BLOGS'})
