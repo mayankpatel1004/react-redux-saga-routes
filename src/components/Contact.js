@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {requestContactData} from '../actions/contactActions';
 
-export default class Contact extends React.Component {
+class Contact extends React.Component {
   constructor(props) {
     super(props)
     this.state = { 
@@ -25,6 +27,7 @@ export default class Contact extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.props.requestContactData(this.state);
     console.log(this.state);
   }
 
@@ -106,3 +109,7 @@ export default class Contact extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = {requestContactData: requestContactData}
+const mapStateToProps = state => ({ data: state.contactReducer.contact });
+export default Contact = connect(mapStateToProps,mapDispatchToProps)(Contact);
